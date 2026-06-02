@@ -9,6 +9,13 @@ object FakeDatabase {
             username = "user",
             password = "123",
             role = "user"
+        ),
+
+        User(
+            username = "admin",
+            password = "123",
+            role = "admin"
         )
+
     )
 }

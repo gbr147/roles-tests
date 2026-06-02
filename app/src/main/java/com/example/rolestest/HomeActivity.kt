@@ -30,6 +30,14 @@ class HomeActivity : ComponentActivity() {
                     startActivity(
                         Intent(this, AdminActivity::class.java)
                     )
+
+
+                    val intent = Intent(this, AdminActivity::class.java)
+
+                    intent.putExtra("role", role)
+
+                    startActivity(intent)
+
                 }
             )
         }
@@ -67,11 +75,14 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Button(
-            onClick = onAdminClick
-        ) {
-            Text("Área Administrativa")
+        if (role == "admin") {
+            Button(
+                onClick = onAdminClick
+            ) {
+                Text("Área Administrativa")
+            }
         }
+
     }
 }
 
